@@ -1,4 +1,4 @@
-import { HERO_CONTENT } from "../constants"
+import { HERO_CONTENT } from "../constants/index"
 import profileImg from "../assets/kevinRushProfile.png"
 import { motion } from "motion/react"
 

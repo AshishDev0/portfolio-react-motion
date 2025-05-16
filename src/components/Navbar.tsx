@@ -1,8 +1,8 @@
-import logo from "../assets/kevinRushLogo.png"
+import logo from "../assets/kevinRushLogo.png";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa";
+// import { FaSquareXTwitter } from "react-icons/fa6";
+// import { FaInstagram } from "react-icons/fa";
 
 const Navbar = () => {
   return (
@@ -12,13 +12,37 @@ const Navbar = () => {
         <img src={logo} className="mx-2 w-10" alt="logo" />
       </div>
       <div className="flex gap-4 items-center justify-center text-2xl">
-        <FaLinkedin />
-        <FaGithub />
-        <FaSquareXTwitter />
-        <FaInstagram />
+        <a
+          href="https://www.linkedin.com/in/ashish-chowdhary-67b204178"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://github.com/AshishDev0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub />
+        </a>
+        {/* <a
+          href="https://twitter.com/your-handle"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaSquareXTwitter />
+        </a> */}
+        {/* <a
+          href="https://instagram.com/your-handle"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaInstagram />
+        </a> */}
       </div>
     </nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

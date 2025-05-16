@@ -1,17 +1,20 @@
 import { PROJECTS } from "../constants/index";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
+import { FaGithub } from "react-icons/fa";
 
 interface PROJECT {
   title: string;
   image: string;
   description: string;
   technologies: string[];
+  link?: string;
+  github?: string;
 }
 
 const Projects = () => {
   return (
     <div className="border-b border-neutral-900 pb-4">
-      <motion.h2 
+      <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.5 }}
@@ -22,7 +25,7 @@ const Projects = () => {
       <div>
         {PROJECTS.map((project: PROJECT, index: number) => (
           <div className="mb-8 flex flex-wrap lg:justify-center" key={index}>
-            <motion.div 
+            <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}
               transition={{ duration: 1 }}
@@ -36,13 +39,30 @@ const Projects = () => {
                 className="mb-6 rounded"
               />
             </motion.div>
-            <motion.div 
+            <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 100 }}
               transition={{ duration: 1 }}
               className="w-full max-w-xl lg:w-3/4"
             >
-              <h6 className="mb-2 font-semibold">{project.title}</h6>
+              <div className="flex justify-between items-center mb-2">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold hover:underline"
+                >
+                  {project.title}
+                </a>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-400 hover:text-white"
+                >
+                  <FaGithub />
+                </a>
+              </div>
               <p className="mb-4 text-neutral-400">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((technology, index) => (
